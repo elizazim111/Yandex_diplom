@@ -1,0 +1,8 @@
+1 Задание
+
+SELECT c.login AS login, COUNT(*) AS orders_count FROM "Couriers" AS c LEFT JOIN "Orders" AS o ON o.id=c.id WHERE "inDelivery" = 't' GROUP BY login;
+
+2 Задание
+
+SELECT id, CASE WHEN finished = 't' THEN 2 WHEN "inDelivery" = 't' THEN 1 ELSE 0 END AS status FROM "Orders";
+WHEN canсelled = 't' THEN -1
